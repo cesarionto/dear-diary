@@ -10,17 +10,15 @@ function Secret({id, subject, content, publicationDate}) {
             <div className="secret">
                 <div>
                     <h4>{subject}</h4>
+                    <p>Id:{id}</p>
                     <p>{content}</p>
                     <p>Data de Publicação: {publicationDate}</p>    
                 </div>
                 <div>
-                    <button className="btn btn-primary" onClick = {()=>setVisibility(!visibility)}>Editar Segredo</button>
+                    <button className="btn btn-primarybtn btn-outline-primary" onClick = {()=>setVisibility(!visibility)}>Editar Segredo</button>
                 </div>
                 <div className={visibility ? `modal.active` : `modal`}>
                     <FormUpdate id={id} subject={subject} content={content}/>
-                    <div className="modal-close">
-                        <button onClick = {()=>setVisibility(!visibility)}>Cancelar</button>
-                    </div>    
                 </div>
             </div>
             <br/>

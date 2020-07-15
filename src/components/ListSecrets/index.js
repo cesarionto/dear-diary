@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+
 import api from '../../services/api';
 import Secret from '../Secret'
 import './styles.css';
@@ -18,7 +19,7 @@ function ListSecrets() {
   return (
     <div className="overflow-hidden container secrets">
         {secrets.map(secret => (
-            <Secret key = {secret.id} subject = {secret.subject} 
+            <Secret key = {secret.id} id= {secret.id} subject = {secret.subject} 
             content = {secret.content} publicationDate = {secret.publicationDate}/>
         ))}
     </div>

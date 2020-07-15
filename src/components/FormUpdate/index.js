@@ -7,10 +7,9 @@ function FormUpdate(props) {
     const [subject, setSubject] = useState(props.subject)
     const [content, setContent] = useState(props.content)
     const [id, setId] = useState(props.id)
-    console.log(id)
     const history = useHistory()
     async function updateSecret(Event) {
-        Event.preventDefault();
+         Event.preventDefault();
         if (window.confirm("Deseja atualizar?")) {
           try {
             const res = await api.put("/update-secret", { id, subject, content });
@@ -19,12 +18,12 @@ function FormUpdate(props) {
           } catch (error) {
             console.log(error);
           }
-        }
+        } 
       }
       async function deleteSecret(Event) {
         Event.preventDefault();
     
-        if (window.confirm("Apagar o seu segredo?", + id)) {
+        if (window.confirm("Apagar o seu segredo?")) {
           try {
             const res = await api.delete(`/delete-secret/${id}`)
             console.log(res);
@@ -39,6 +38,11 @@ function FormUpdate(props) {
     <div>
         <main className="form-save">
             <form onSubmit={updateSecret}>
+            <div className="form-group">
+                    <label>Identificador</label>
+                    <input className ="form-control" type="text" value={id} 
+                    onChange={Event => setId(Event.target.value)}/>
+                </div>
                 <div className="form-group">
                     <label>Titulo</label>
                     <input className ="form-control" type="text" value={subject} 
@@ -49,8 +53,8 @@ function FormUpdate(props) {
                     <textarea className ="form-control" value={content} 
                     onChange={Event => setContent(Event.target.value)}/>
                 </div>
-                <button className="btn btn-primary button-save">Atualizar</button>
-                <button id={id} onClick={deleteSecret}className = "btn btn-primary button-save">Apagar</button>
+                <button className="btn btn-outline-success button-save">Atualizar</button>
+                <button onClick={deleteSecret}className = "btn btn-outline-danger button-save">Apagar</button>
             </form>
         </main>
     </div>
