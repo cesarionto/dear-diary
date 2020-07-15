@@ -1,8 +1,13 @@
-import React from 'react';
+import React from 'react'
 import './styles.css'
 // import { Container } from './styles';
+import {logout} from '../../services/auth'
+
 
 function Header() {
+    function finishSession(){
+        logout()
+    }
   return (
       <div>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -16,7 +21,7 @@ function Header() {
                         <a class="nav-link" href="/insert-secret">Inserir Segredo <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/exit">Sair</a>
+                        <a onClick={finishSession} class="nav-link" href="/">Sair</a>
                     </li>
                 </ul>
             </div>

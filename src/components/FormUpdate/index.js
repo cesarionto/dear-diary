@@ -9,7 +9,6 @@ function FormUpdate(props) {
     const [id, setId] = useState(props.id)
     const history = useHistory()
     async function updateSecret(Event) {
-         Event.preventDefault();
         if (window.confirm("Deseja atualizar?")) {
           try {
             const res = await api.put("/update-secret", { id, subject, content });
@@ -21,8 +20,6 @@ function FormUpdate(props) {
         } 
       }
       async function deleteSecret(Event) {
-        Event.preventDefault();
-    
         if (window.confirm("Apagar o seu segredo?")) {
           try {
             const res = await api.delete(`/delete-secret/${id}`)
@@ -38,11 +35,6 @@ function FormUpdate(props) {
     <div>
         <main className="form-save">
             <form onSubmit={updateSecret}>
-            <div className="form-group">
-                    <label>Identificador</label>
-                    <input className ="form-control" type="text" value={id} 
-                    onChange={Event => setId(Event.target.value)}/>
-                </div>
                 <div className="form-group">
                     <label>Titulo</label>
                     <input className ="form-control" type="text" value={subject} 

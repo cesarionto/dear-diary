@@ -8,7 +8,6 @@ function FormSave(props) {
     const [content, setContent] = useState(props.content);
     const history = useHistory();
     async function saveSecret(Event){
-        Event.preventDefault();
         var data = {
             subject,
             content

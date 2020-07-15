@@ -1,6 +1,5 @@
 import React,{useState} from 'react';
 import api from '../../services/api';
-import {login} from '../../services/auth';
 import {useHistory} from 'react-router-dom';
 import './styles.css';
 // import { Container } from './styles';
@@ -23,7 +22,6 @@ function SignUp() {
         try{
             const response = await api.post("/sign-up", data);
             console.log(response.data);
-            login(response.data.token);
             alert("Melhor amigo cadastrado!")
             history.push("/");
         }catch(error){
