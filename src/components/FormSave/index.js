@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import api from '../../services/api';
 import {useHistory} from 'react-router-dom';
+import './styles.css'
 
 function FormSave(props) {
     const [subject, setSubject] = useState(props.subject);
@@ -21,12 +22,24 @@ function FormSave(props) {
         }
     }
   return (
-    <form onSubmit={saveSecret}>
-        
-        <p>Título:<input type="text" value={subject} onChange={Event => setSubject(Event.target.value)}/></p>
-        <p>Resumo do Dia:<textarea value={content} onChange={Event => setContent(Event.target.value)}/></p>
-        <button >Salvar</button>
-    </form>
+    <div>
+        <main className="form-save">
+            <form onSubmit={saveSecret}>
+                <div className="form-group">
+                    <label>Titulo</label>
+                    <input className ="form-control" type="text" value={subject} 
+                    onChange={Event => setSubject(Event.target.value)}/>
+                </div>
+                <div className="form-group">
+                    <label>Resumo do Dia:</label>
+                    <textarea className ="form-control" value={content} 
+                    onChange={Event => setContent(Event.target.value)}/>
+                </div>
+                <button className="btn btn-primary button-save">Salvar</button>
+            </form>
+        </main>
+    </div>
+    
   );
 }
 

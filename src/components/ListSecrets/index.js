@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import api from '../../services/api';
 import Secret from '../Secret'
-
-// import { Container } from './styles';
+import './styles.css';
 
 function ListSecrets() {
   const [secrets, setSecrets] = useState([]);
@@ -17,15 +16,12 @@ function ListSecrets() {
     }
 
   return (
-  <div> 
-      <h1>Meu Querido Diario</h1>
-      <hr/>
-      {secrets.map(secret => (
-          <Secret key = {secret.id} subject = {secret.subject} 
-          content = {secret.content} publicationDate = {secret.publicationDate}/>
-      ))}
-      <hr/>
-  </div>
+    <div className="overflow-hidden">
+        {secrets.map(secret => (
+            <Secret key = {secret.id} subject = {secret.subject} 
+            content = {secret.content} publicationDate = {secret.publicationDate}/>
+        ))}
+    </div>
   );
 }
 

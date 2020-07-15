@@ -1,26 +1,31 @@
 import React,{useState} from 'react';
 import './style.css';
-import FormUpdate from '../FormUpdate';
+//import FormUpdate from '../FormUpdate';
+import FormSave from '../FormSave';
 
 function Secret({id, subject, content, publicationDate}) {
     const [visibility, setVisibility] = useState(false)
     return (
-        <div className="secret">
-            <div>
-                <h1>{subject}</h1>
-                <h3>{content}</h3>
-                <h5>{publicationDate}</h5>
+        <div>
+            <div className="secret">
+                <div>
+                    <h4>Titulo: {subject}</h4>
+                    <p>{content}</p>
+                    <p>Data de Publicação: {publicationDate}</p>    
+                </div>
+                <div>
+                    <button onClick = {()=>setVisibility(!visibility)}>Editar Segredo</button>
+                </div>
+                <div className={visibility ? `modal.active` : `modal`}>
+                    <FormSave id= {id} subject={subject} content={content}/>
+                    <div className="modal-close">
+                        <button onClick = {()=>setVisibility(!visibility)}>Cancelar</button>
+                    </div>    
+                </div>
             </div>
-            <div>
-                <button onClick = {()=>setVisibility(!visibility)}>Atualizar</button>
-            </div>
-            <div className={visibility ? `modal active` : `modal`}>
-                <FormUpdate id= {id} subject={subject} content={content}/>
-                <div className="modal-close">
-                    <button onClick = {()=>setVisibility(!visibility)}>Cancelar</button>
-                </div>    
-            </div>
+            <br/>
         </div>
+        
     );
 }
 

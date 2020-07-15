@@ -5,12 +5,11 @@ const api = axios.create({
   baseURL: "https://dear-diary-api.herokuapp.com/",
 });
 
-/* api.interceptors.request.use(async config => {
+api.interceptors.request.use(async config => {
   const token = getToken();
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
   }
   return config;
-}); */
-
+});
 export default api;
