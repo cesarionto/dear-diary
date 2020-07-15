@@ -1,12 +1,13 @@
-import React from 'react';
-import { BrowserRouter, Switch } from 'react-router-dom';
+import React from 'react'
+import { BrowserRouter, Switch } from 'react-router-dom'
 
-import PrivateRoute from './PrivateRoute';
-import PublicRoute from './PublicRoute';
+import PrivateRoute from './PrivateRoute'
+import PublicRoute from './PublicRoute'
 
 import Login from "../pages/Login"
 import Home from "../pages/Home"
-import SignUp from '../pages/SignUp';
+import SignUp from '../pages/SignUp'
+import FormInsert from '../pages/FormInsert'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -17,6 +18,7 @@ export default function Routes() {
           <PublicRoute exact path="/" component={Login}/>
           <PublicRoute  path="/sign-up" component={SignUp}/>
           <PrivateRoute path="/home" component={Home}/>
+          <PrivateRoute path="/insert-secret" component={FormInsert}/>
       </Switch>
     </BrowserRouter>
   );

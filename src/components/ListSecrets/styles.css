@@ -1,4 +1,8 @@
 .secrets{
     overflow-y: scroll!important;
-    background-color: red;
+    padding-top: 25px;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: initial;
+    margin: 25px;
 }

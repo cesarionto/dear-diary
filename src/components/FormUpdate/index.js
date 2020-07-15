@@ -7,7 +7,7 @@ function FormUpdate(props) {
     const [subject, setSubject] = useState(props.subject)
     const [content, setContent] = useState(props.content)
     const [id, setId] = useState(props.id)
-    const [publicationDate, setPublicationDate] = useState(props.publicationDate)
+    console.log(id)
     const history = useHistory()
     async function updateSecret(Event) {
         Event.preventDefault();
@@ -24,13 +24,9 @@ function FormUpdate(props) {
       async function deleteSecret(Event) {
         Event.preventDefault();
     
-        if (window.confirm("Apagar o seu segredo?")) {
+        if (window.confirm("Apagar o seu segredo?", + id)) {
           try {
-            const res = await api.delete("/delete-secret", {
-              data: {
-                id,
-              },
-            });
+            const res = await api.delete(`/delete-secret/${id}`)
             console.log(res);
             alert("Apagado!")
             history.push("/home");
@@ -53,7 +49,8 @@ function FormUpdate(props) {
                     <textarea className ="form-control" value={content} 
                     onChange={Event => setContent(Event.target.value)}/>
                 </div>
-                <button className="btn btn-primary button-save">Salvar</button>
+                <button className="btn btn-primary button-save">Atualizar</button>
+                <button id={id} onClick={deleteSecret}className = "btn btn-primary button-save">Apagar</button>
             </form>
         </main>
     </div>
