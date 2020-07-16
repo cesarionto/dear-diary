@@ -1,16 +1,18 @@
-# Project Title
+# Dear Diary v1.0
+QueridoDiário é um projeto de um diário pessoal com 4 operações principais (VEIA): Visualizar, Excluir, Inserir, Alterar.
+Este projeto foi contruido com o intuito de consumir uma API REST, desenvolvida com outras características (ver a seguir).
 
-Dear Diary v1.0 <br/>
-Available in: https://mydeardiary.netlify.app/<br/>
-Backend available in: https://dear-diary-api.herokuapp.com/swagger-ui.html<br/>
-Backend Repository: https://github.com/cesarionto/dear-diary-api<br/>
+## Links
+Disponivel em: https://mydeardiary.netlify.app/<br/>
+Backend disponivel em: https://dear-diary-api.herokuapp.com/swagger-ui.html<br/>
+Repositorio do backend: https://github.com/cesarionto/dear-diary-api<br/>
 
-## For running in localhost:
-Clone and unzip the file.
-In the project directory, you can run:
+## Para testar em localhost
+- Clone e descompacte o arquivo.
+- Intale o NodeJS disponivel em: https://nodejs.org/en/download/.
+- Na pasta do projeto execute os comandos:
 ### `npm install`
 ### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+O projeto iniciará no navegador.
 

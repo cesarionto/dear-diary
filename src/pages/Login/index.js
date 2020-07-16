@@ -49,7 +49,7 @@ function Login() {
             <div className="sign-up">
             <small className="form-text text-muted">
                 Você precisa ser o meu melhor amigo:
-                <a href="/sign-up"> Seja meu melhor amigo.</a>
+                <a href="/sign-up">Seja meu melhor amigo.</a>
             </small>
             </div>
         </main>

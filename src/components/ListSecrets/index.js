@@ -16,7 +16,7 @@ function ListSecrets() {
     }
 
   return (
-    <div className="overflow-hidden container secrets">
+    <div className="container secrets">
         {secrets.map(secret => (
             <Secret key = {secret.id} id= {secret.id} subject = {secret.subject} 
             content = {secret.content} publicationDate = {secret.publicationDate}/>
