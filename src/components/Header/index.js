@@ -18,7 +18,7 @@ function Header() {
             <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav">
                     <li className="nav-item active">
-                        <a className="nav-link" href="/insert-secret">Inserir Segredo <span className="sr-only">(current)</span></a>
+                        <a className="nav-link" href="/insert-secret">Inserir Segredo {/* <span className="sr-only">(current)</span> */}</a>
                     </li>
                     <li className="nav-item">
                         <a onClick={finishSession} className="nav-link" href="/">Sair</a>

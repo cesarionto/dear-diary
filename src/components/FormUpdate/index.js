@@ -9,6 +9,7 @@ function FormUpdate(props) {
     const [id, setId] = useState(props.id)
     const history = useHistory()
     async function updateSecret(Event) {
+      Event.preventDefault()
         if (window.confirm("Deseja atualizar?")) {
           try {
             const response = await api.put("/update-secret", { id, subject, content });
@@ -20,6 +21,7 @@ function FormUpdate(props) {
         } 
       }
       async function deleteSecret(Event) {
+        Event.preventDefault()
         if (window.confirm("Apagar o seu segredo?")) {
           try {
             const response = await api.delete(`/delete-secret/${id}`)
