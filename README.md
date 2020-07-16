@@ -6,9 +6,7 @@ Backend available in: https://dear-diary-api.herokuapp.com/swagger-ui.html<br/>
 Backend Repository: https://github.com/cesarionto/dear-diary-api<br/>
 
 ## For running in localhost:
-## Installation
 Clone and unzip the file.
-## Available Scripts
 In the project directory, you can run:
 ### `npm install`
 ### `npm start`
