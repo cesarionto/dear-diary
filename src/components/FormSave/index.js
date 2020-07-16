@@ -13,7 +13,7 @@ function FormSave(props) {
             content
         }
         try{
-           const response = api.post("/insert-secret", data);
+           const response = await api.post("/insert-secret", data);
            console.log(response)
            history.push("/home")
         }catch(error){ 

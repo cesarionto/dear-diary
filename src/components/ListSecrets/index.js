@@ -6,7 +6,6 @@ import './styles.css';
 
 function ListSecrets() {
   const [secrets, setSecrets] = useState([]);
-
     useEffect(()=>{
         list();
     },[]);

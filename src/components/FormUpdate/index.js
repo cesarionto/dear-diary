@@ -11,8 +11,8 @@ function FormUpdate(props) {
     async function updateSecret(Event) {
         if (window.confirm("Deseja atualizar?")) {
           try {
-            const res = await api.put("/update-secret", { id, subject, content });
-            console.log(res.data);
+            const response = await api.put("/update-secret", { id, subject, content });
+            console.log(response.data);
             history.push("/home");
           } catch (error) {
             console.log(error);
@@ -22,8 +22,8 @@ function FormUpdate(props) {
       async function deleteSecret(Event) {
         if (window.confirm("Apagar o seu segredo?")) {
           try {
-            const res = await api.delete(`/delete-secret/${id}`)
-            console.log(res);
+            const response = await api.delete(`/delete-secret/${id}`)
+            console.log(response);
             alert("Apagado!")
             history.push("/home");
           } catch (error) {
@@ -41,13 +41,13 @@ function FormUpdate(props) {
                     onChange={Event => setSubject(Event.target.value)}/>
                 </div>
                 <div className="form-group">
-                    <label>Resumo do Dia:</label>
+                    <label>responseumo do Dia:</label>
                     <textarea className ="form-control" value={content} 
                     onChange={Event => setContent(Event.target.value)}/>
                 </div>
                 <button className="btn btn-outline-success button-save">Atualizar</button>
-                <button onClick={deleteSecret}className = "btn btn-outline-danger button-save">Apagar</button>
             </form>
+          <button onClick={deleteSecret} className = "btn btn-outline-danger button-save">Apagar</button>
         </main>
     </div>
   );
