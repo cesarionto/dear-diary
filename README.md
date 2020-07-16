@@ -1,9 +1,9 @@
 # Project Title
 
-Dear Diary v1.0
-Available in: https://mydeardiary.netlify.app/
-Backend available in: https://dear-diary-api.herokuapp.com/swagger-ui.html
-Backend Repository: https://github.com/cesarionto/dear-diary-api
+Dear Diary v1.0 <br/>
+Available in: https://mydeardiary.netlify.app/<br/>
+Backend available in: https://dear-diary-api.herokuapp.com/swagger-ui.html<br/>
+Backend Repository: https://github.com/cesarionto/dear-diary-api<br/>
 
 ## For running in localhost:
 ## Installation
