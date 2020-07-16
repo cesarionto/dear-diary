@@ -27,7 +27,7 @@ function Login() {
     }
   return ( 
     <div>
-        <main className="form-main">
+        <main className="form-main"> 
             <h1>Querido Diário</h1>
             <br/>
             <form onSubmit={submit}>
